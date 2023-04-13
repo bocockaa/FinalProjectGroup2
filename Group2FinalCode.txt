@@ -1,0 +1,128 @@
+
+
+//music table one for each table
+CREATE TABLE Music (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Title NVARCHAR(200) NOT NULL,
+    Author NVARCHAR(200) NOT NULL,
+    Music_Genre VARCHAR(50) NOT NULL,
+    Release_Date DATE VARCHAR(50) NOT NULL,
+    Music_Album NVARCHAR(50) NOT NULL
+);
+
+//put in a models folder?? one for each table 
+using System;
+
+public class Music
+{
+    public int Id { get; set; }
+    public string title { get; set; }
+    public string author { get; set; }
+    public string musicGenre { get; set; }
+	public DateTime releaseDate { get; set; }
+    public string musicAlbum { get; set; }
+}
+
+//DataContext that inherits from DbContext, and define a DbSet property for each entity class???
+using Microsoft.EntityFrameworkCore;
+
+public class DataContext : DbContext
+{
+    public DbSet<TeamMember> TeamMembers { get; set; }
+    public DbSet<Food> FoodFavorites { get; set; }
+    public DbSet<Games> VideoGames { get; set; }
+    public DbSet<Music> MusicFavs { get; set; }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=MyDatabase;Trusted_Connection=True;");
+    }
+}
+
+//controllers for music?? need controls for each table 
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace MyProject.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]")]
+    public class MusicController : ControllerBase
+    {
+        private readonly DataContext _context;
+
+        public MusicController(DataContext context)
+        {
+            _context = context;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Music>>> GetMusicFavs(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return await _context.MusicFavs.Take(5).ToListAsync();
+            }
+            else
+            {
+                return await _context.MusicFavs.Where(tm => tm.Id == id).ToListAsync();
+            }
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Music>> GetMusicFav(int id)
+        {
+            var musicFav = await _context.MusicFavs.FindAsync(id);
+
+            if (musicFav == null)
+            {
+                return NotFound();
+            }
+
+            return musicFav;
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<Music>> PostMusic(Music musicFav)
+        {
+            _context.MusicFavs.Add(musicFav);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetMusicFavs), new { id = musicFav.Id }, musicFav);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutMusicFav(int id, music musicFav)
+        {
+            if (id != musicFav.Id)
+            {
+                return BadRequest();
+            }
+
+            _context.Entry(musicFav).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteMusic(int id)
+        {
+            var musicFav = await _context.MusicFavs.FindAsync(id);
+
+            if (musicFav == null)
+            {
+                return NotFound();
+            }
+
+            _context.MusicFavs.Remove(musicFav);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+    }
+}
+
