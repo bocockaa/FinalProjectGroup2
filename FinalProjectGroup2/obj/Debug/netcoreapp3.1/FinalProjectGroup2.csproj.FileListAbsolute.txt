@@ -1,0 +1,7 @@
+C:\Users\firef\Source\Repos\FinalProjectGroup2\FinalProjectGroup2\obj\Debug\netcoreapp3.1\FinalProjectGroup2.csproj.AssemblyReference.cache
+C:\Users\firef\Source\Repos\FinalProjectGroup2\FinalProjectGroup2\obj\Debug\netcoreapp3.1\FinalProjectGroup2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\firef\Source\Repos\FinalProjectGroup2\FinalProjectGroup2\obj\Debug\netcoreapp3.1\FinalProjectGroup2.AssemblyInfoInputs.cache
+C:\Users\firef\Source\Repos\FinalProjectGroup2\FinalProjectGroup2\obj\Debug\netcoreapp3.1\FinalProjectGroup2.AssemblyInfo.cs
+C:\Users\firef\Source\Repos\FinalProjectGroup2\FinalProjectGroup2\obj\Debug\netcoreapp3.1\FinalProjectGroup2.csproj.CoreCompileInputs.cache
+C:\Users\firef\Source\Repos\FinalProjectGroup2\FinalProjectGroup2\obj\Debug\netcoreapp3.1\FinalProjectGroup2.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\firef\Source\Repos\FinalProjectGroup2\FinalProjectGroup2\obj\Debug\netcoreapp3.1\FinalProjectGroup2.MvcApplicationPartsAssemblyInfo.cache
