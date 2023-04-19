@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\firef\\source\\repos\\FinalProjectGroup2\\FinalProjectGroup2\\FinalProjectGroup2.csproj": {}
+    "C:\\Users\\firef\\OneDrive\\Documents\\testfolder\\FinalProjectGroup2\\FinalProjectGroup2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\firef\\source\\repos\\FinalProjectGroup2\\FinalProjectGroup2\\FinalProjectGroup2.csproj": {
+    "C:\\Users\\firef\\OneDrive\\Documents\\testfolder\\FinalProjectGroup2\\FinalProjectGroup2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\firef\\source\\repos\\FinalProjectGroup2\\FinalProjectGroup2\\FinalProjectGroup2.csproj",
+        "projectUniqueName": "C:\\Users\\firef\\OneDrive\\Documents\\testfolder\\FinalProjectGroup2\\FinalProjectGroup2.csproj",
         "projectName": "FinalProjectGroup2",
-        "projectPath": "C:\\Users\\firef\\source\\repos\\FinalProjectGroup2\\FinalProjectGroup2\\FinalProjectGroup2.csproj",
+        "projectPath": "C:\\Users\\firef\\OneDrive\\Documents\\testfolder\\FinalProjectGroup2\\FinalProjectGroup2.csproj",
         "packagesPath": "C:\\Users\\firef\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\firef\\source\\repos\\FinalProjectGroup2\\FinalProjectGroup2\\obj\\",
+        "outputPath": "C:\\Users\\firef\\OneDrive\\Documents\\testfolder\\FinalProjectGroup2\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

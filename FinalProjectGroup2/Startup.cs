@@ -1,3 +1,4 @@
+using FinalProjectGroup2.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -30,6 +31,9 @@ namespace FinalProjectGroup2
             services.AddSwaggerDocument();
             services.AddDbContext<MemberinfoContext>(options => 
                 options.UseSqlServer(Configuration.GetConnectionString("MemberinfoContext")));
+            services.AddDbContext<FoodContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("FoodContext")));
+            services.AddScoped<IFoodContextDAO, IFoodContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

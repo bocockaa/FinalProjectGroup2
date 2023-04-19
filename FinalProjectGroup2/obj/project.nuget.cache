@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "V6d7+FS+x30oogDD5++ZrghilNeomUzXKwfTMvsKPR6T32oFYzoXU4T9Tn0dqd35PdAdLqyFJ0scHsOT2aaxBw==",
+  "dgSpecHash": "Vc1jsCSATiAbbZhvNcrbH0No9jQRHsyvbWIyZA9ra0tp1cEvV+1ze6GHhXIJnAA19IpPDqy+QRZrI/k12ag4IQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\firef\\source\\repos\\FinalProjectGroup2\\FinalProjectGroup2\\FinalProjectGroup2.csproj",
+  "projectFilePath": "C:\\Users\\firef\\OneDrive\\Documents\\testfolder\\FinalProjectGroup2\\FinalProjectGroup2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\firef\\.nuget\\packages\\microsoft.csharp\\4.4.1\\microsoft.csharp.4.4.1.nupkg.sha512",
     "C:\\Users\\firef\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.5\\microsoft.entityframeworkcore.7.0.5.nupkg.sha512",

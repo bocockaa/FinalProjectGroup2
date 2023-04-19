@@ -1,0 +1,7 @@
+C:\Users\firef\OneDrive\Documents\testfolder\FinalProjectGroup2\obj\Debug\net7.0\FinalProjectGroup2.csproj.AssemblyReference.cache
+C:\Users\firef\OneDrive\Documents\testfolder\FinalProjectGroup2\obj\Debug\net7.0\FinalProjectGroup2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\firef\OneDrive\Documents\testfolder\FinalProjectGroup2\obj\Debug\net7.0\FinalProjectGroup2.AssemblyInfoInputs.cache
+C:\Users\firef\OneDrive\Documents\testfolder\FinalProjectGroup2\obj\Debug\net7.0\FinalProjectGroup2.AssemblyInfo.cs
+C:\Users\firef\OneDrive\Documents\testfolder\FinalProjectGroup2\obj\Debug\net7.0\FinalProjectGroup2.csproj.CoreCompileInputs.cache
+C:\Users\firef\OneDrive\Documents\testfolder\FinalProjectGroup2\obj\Debug\net7.0\FinalProjectGroup2.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\firef\OneDrive\Documents\testfolder\FinalProjectGroup2\obj\Debug\net7.0\FinalProjectGroup2.MvcApplicationPartsAssemblyInfo.cache

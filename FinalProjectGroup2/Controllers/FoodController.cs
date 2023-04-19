@@ -1,12 +1,42 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using FinalProjectGroup2.Interfaces;
 
 namespace FinalProjectGroup2.Controllers
 {
-    public class FoodController : Controller
+    [ApiController]
+    [Route("[controller]")]
+    public class FoodController : ControllerBase
     {
-        public IActionResult Index()
+        private readonly ILogger<FoodController> _logger;
+
+        private readonly IFoodContextDAO _context;
+
+        public FoodController(ILogger<FoodController> logger, IFoodContextDAO context)
         {
-            return View();
+            _logger = logger;
+            _context = context;
+        }
+
+        [HttpGet]
+
+        public IActionResult Get()
+        {
+            return Ok(_context.GetAllFood());
+        }
+
+        [HttpGet]
+        public IActionResult Get(int id)
+        {
+            var food = _context.GetFood(id);
+            if (food == null)
+            {
+                return NotFound();
+            } else
+            {
+
+            }
+            return(Ok(food));
         }
     }
 }
