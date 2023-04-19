@@ -33,7 +33,7 @@ namespace FinalProjectGroup2.Controllers
             if (food == null || id == 0)
             {
                 //return NotFound();
-                Ok(_context.GetAllFood().Take(5);
+                Ok(_context.GetAllFood().Take(5));
             }
             return(Ok(food));
         }

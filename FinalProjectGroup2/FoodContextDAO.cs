@@ -65,7 +65,7 @@ namespace FinalProjectGroup2.Data
         public int? Add(Food food)
         {
             //new Food { Id = 1, Name = "Pizza", Flavor = "Umami", Calories = 1000, Vegan = false },
-            var foods = _context.Foods.Where(x => x.Name.Equals(food.Name) && x => x.Flavor.Equals(food.Flavor) && x => x.Calories == food.Calories && x => x.Vegan == food.Vegan);
+            var foods = _context.Foods.Where(x => x.Name.Equals(food.Name)).firstOrDefault();
 
             if (food != null)
             {
