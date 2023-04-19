@@ -25,18 +25,31 @@ namespace FinalProjectGroup2.Controllers
             return Ok(_context.GetAllFood());
         }
 
-        [HttpGet]
+        [HttpGet("id")]
         public IActionResult Get(int id)
         {
-            var food = _context.GetFood(id);
+            var food = _context.GetFoodById(id);
             if (food == null)
             {
                 return NotFound();
-            } else
-            {
-
             }
             return(Ok(food));
         }
+
+        [HttpDelete("id")]
+
+        public IActionResult Delete(int id) {
+            var food = _context.RemoveFoodById(id);
+
+            if (team == null)
+            {
+                return NotFound(id);
+            }
+            if (string.IsNullOrEmpty(food.Name))
+            {
+                return StatusCode(500, "An error occured while processing your request");
+            }
+            return Ok();
+         }
     }
 }

@@ -17,9 +17,25 @@ namespace FinalProjectGroup2.Data
             return _context.Foods.ToList();
         }
 
-        public Food GetFood(int id)
+        public Food GetFoodById(int id)
         {
-            return _context.Foods.Where(x => x.Id.Equals(id)).firstOrDefault;
+            return _context.Foods.Where(x => x.Id.Equals(id)).firstOrDefault();
+        }
+
+        public Food RemoveFoodById(int id)
+        {
+            var food = this.GetFoodById(id);
+            if (food == null) return null;
+            try
+            {
+                _context.Foods.Remove(food);
+                _context.SaveChanges();
+                return food;
+            }
+            catch(Exception)
+            {
+                return new Food();
+            }
         }
     }
 }

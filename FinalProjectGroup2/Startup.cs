@@ -37,7 +37,7 @@ namespace FinalProjectGroup2
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, FoodContext fcontext)
         {
             if (env.IsDevelopment())
             {
@@ -47,6 +47,8 @@ namespace FinalProjectGroup2
             app.UseOpenApi();
 
             app.UseSwaggerUi3();
+
+            fcontext.Database.Migrate();
 
             app.UseHttpsRedirection();
 
