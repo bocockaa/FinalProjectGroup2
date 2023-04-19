@@ -1,11 +1,13 @@
-using System
+using System;
 
 namespace FinalProjectGroup2
 {
 
 
-    public class Memberinfo
+    public class Member
     {
+        //primary key
+        public int Id {get; set;}
         //names
         public string FullName {get; set;}
 
@@ -16,9 +18,6 @@ namespace FinalProjectGroup2
         public string Program {get; set;}
 
         //Year in program
-        public int Year {get; set;}
-
-        
+        public string Year {get; set;}
     }
-
 }

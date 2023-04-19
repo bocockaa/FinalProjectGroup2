@@ -12,9 +12,9 @@ namespace FinalProjectGroup2.Controllers
 
     public class MemberinfoController : ControllerBase
     {
-        private readonly DataContext _context;
+        private readonly MemberinfoContext _context;
 
-        public MemberinfoController(DataContext context)
+        public MemberinfoController(MemberinfoContext context)
         {
             _context = context;
         }
