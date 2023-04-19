@@ -9,7 +9,10 @@ namespace FinalProjectGroup2.Interfaces
 
         Food GetFoodById(int id);
 
-        Food RemoveFoodById(int id);
+        int? RemoveFoodById(int id);
+
+        int? UpdateFood(Food food);
+
     }
 
 }

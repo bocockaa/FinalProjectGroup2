@@ -22,7 +22,7 @@ namespace FinalProjectGroup2.Data
             return _context.Foods.Where(x => x.Id.Equals(id)).firstOrDefault();
         }
 
-        public Food RemoveFoodById(int id)
+        public int? RemoveFoodById(int id)
         {
             var food = this.GetFoodById(id);
             if (food == null) return null;
@@ -30,11 +30,34 @@ namespace FinalProjectGroup2.Data
             {
                 _context.Foods.Remove(food);
                 _context.SaveChanges();
-                return food;
+                return 1;
             }
             catch(Exception)
             {
-                return new Food();
+                return 0;
+            }
+        }
+
+        public int? UpdateFood(Food food)
+        {
+            var foodUpdate = this.GetFoodById(food.Id);
+            if (foodUpdate == null) return null;
+
+            //{Id = 1, Name = "Pizza", Flavor = "Umami", Calories = 1000, Vegan = false},
+            foodUpdate.Name = food.Name;
+            foodUpdate.Flavor = food.Flavor;
+            foodUpdate.Calories = food.Calories;
+            foodUpdate.Vegan = food.Vegan;
+
+
+            try
+            {
+                _context.Foods.Update(foodUpdate);
+                _context.SaveChanges();
+                return 1;
+            } catch (Exception)
+            {
+                return 0;
             }
         }
     }
