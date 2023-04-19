@@ -28,6 +28,8 @@ namespace FinalProjectGroup2
             services.AddControllers();
             //added here
             services.AddSwaggerDocument();
+            services.AddDbContext<MemberinfoContext>(options => 
+                options.UseSqlServer(Configuration.GetConnectionString("MemberinfoContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
