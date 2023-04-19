@@ -13,6 +13,8 @@ namespace FinalProjectGroup2.Interfaces
 
         int? UpdateFood(Food food);
 
+        int? Add(Food food);
+
     }
 
 }

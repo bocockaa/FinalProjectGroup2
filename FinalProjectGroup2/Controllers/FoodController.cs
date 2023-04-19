@@ -70,5 +70,22 @@ namespace FinalProjectGroup2.Controllers
             }
             return Ok();
         }
+
+        [HttpPost]
+
+        public IActionResult Post(Food food)
+        {
+            var result = _context.Add(food);
+
+            if (result == null)
+            {
+                return StatusCode(500, "Food already exists");
+            }
+            if (result == 0)
+            {
+                return StatusCode(500, "An error occured while processing your request");
+            }
+            return Ok();
+        }
     }
 }

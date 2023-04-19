@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using FinalProjectGroup2.Interfaces;
 
 namespace FinalProjectGroup2.Data
@@ -53,6 +54,27 @@ namespace FinalProjectGroup2.Data
             try
             {
                 _context.Foods.Update(foodUpdate);
+                _context.SaveChanges();
+                return 1;
+            } catch (Exception)
+            {
+                return 0;
+            }
+        }
+
+        public int? Add(Food food)
+        {
+            //new Food { Id = 1, Name = "Pizza", Flavor = "Umami", Calories = 1000, Vegan = false },
+            var foods = _context.Foods.Where(x => x.Name.Equals(food.Name) && x => x.Flavor.Equals(food.Flavor) && x => x.Calories == food.Calories && x => x.Vegan == food.Vegan);
+
+            if (food != null)
+            {
+                return null;
+            }
+
+            try
+            {
+                _context.Foods.Add(food);
                 _context.SaveChanges();
                 return 1;
             } catch (Exception)

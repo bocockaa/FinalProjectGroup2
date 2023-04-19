@@ -8,9 +8,9 @@ namespace FinalProjectGroup2.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<Food>().HasData(
-                new Food {Id = 0, Name = "Pizza", Flavor = "Umami", Calories = 1000, Vegan = false},
-                new Food {Id = 1, Name = "Apple", Flavor = "Sweet", Calories = 100, Vegan = true},
-                new Food {Id = 2, Name = "Kimchi", Flavor = "Sour", Calories = 25, Vegan = false}
+                new Food {Id = 1, Name = "Pizza", Flavor = "Umami", Calories = 1000, Vegan = false},
+                new Food {Id = 2, Name = "Apple", Flavor = "Sweet", Calories = 100, Vegan = true},
+                new Food {Id = 3, Name = "Kimchi", Flavor = "Sour", Calories = 25, Vegan = false}
 
 
             );
