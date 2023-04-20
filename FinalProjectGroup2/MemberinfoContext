@@ -17,5 +17,6 @@ namespace FinalProjectGroup2.Data
         }
 
         public DbSet<Member> Memberr {get; set;}
+
     }
 }
