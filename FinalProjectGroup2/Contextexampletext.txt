@@ -1,0 +1,64 @@
+
+
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace MyWebAPI.Models
+{
+    public class MyWebAPIDbContext : DbContext
+    {
+        public MyWebAPIDbContext(DbContextOptions<MyWebAPIDbContext> options)
+            : base(options)
+        {
+        }
+
+        public DbSet<TeamMember> TeamMembers { get; set; }
+        public DbSet<Hobby> Hobbies { get; set; }
+        public DbSet<BreakfastFood> BreakfastFoods { get; set; }
+        public DbSet<OtherTable> OtherTables { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            // Configure relationships
+        }
+    }
+
+    public class TeamMember
+    {
+        public int Id { get; set; }
+        public string FullName { get; set; }
+        public DateTime Birthdate { get; set; }
+        public string CollegeProgram { get; set; }
+        public string YearInProgram { get; set; }
+    }
+
+    public class Hobby
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public string Category { get; set; }
+        public bool IsIndoor { get; set; }
+    }
+
+    public class BreakfastFood
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public string Category { get; set; }
+        public bool IsHealthy { get; set; }
+    }
+
+    public class OtherTable
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public string Category { get; set; }
+        public int Quantity { get; set; }
+    }
+}
