@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using FinalProjectGroup2.Interfaces;
+using System.Linq;
 
 namespace FinalProjectGroup2.Controllers
 {
@@ -22,7 +23,7 @@ namespace FinalProjectGroup2.Controllers
 
         public IActionResult Get()
         {
-            return Ok(_context.GetAllFood());
+            return Ok(_context.GetAllFoods());
         }
 
         [HttpGet("id")]
@@ -33,7 +34,7 @@ namespace FinalProjectGroup2.Controllers
             if (food == null || id == 0)
             {
                 //return NotFound();
-                Ok(_context.GetAllFood().Take(5));
+                Ok(_context.GetAllFoods().Take(5));
             }
             return(Ok(food));
         }

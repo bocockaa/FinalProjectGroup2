@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using FinalProjectGroup2.Interfaces;
 
@@ -20,7 +21,7 @@ namespace FinalProjectGroup2.Data
 
         public Food GetFoodById(int id)
         {
-            return _context.Foods.Where(x => x.Id.Equals(id)).firstOrDefault();
+            return _context.Foods.Where(x => x.Id.Equals(id)).FirstOrDefault();
         }
 
         public int? RemoveFoodById(int id)
@@ -33,7 +34,7 @@ namespace FinalProjectGroup2.Data
                 _context.SaveChanges();
                 return 1;
             }
-            catch(Exception)
+            catch(System.Exception ex)
             {
                 return 0;
             }
@@ -56,7 +57,7 @@ namespace FinalProjectGroup2.Data
                 _context.Foods.Update(foodUpdate);
                 _context.SaveChanges();
                 return 1;
-            } catch (Exception)
+            } catch (System.Exception ex)
             {
                 return 0;
             }
@@ -65,7 +66,7 @@ namespace FinalProjectGroup2.Data
         public int? Add(Food food)
         {
             //new Food { Id = 1, Name = "Pizza", Flavor = "Umami", Calories = 1000, Vegan = false },
-            var foods = _context.Foods.Where(x => x.Name.Equals(food.Name)).firstOrDefault();
+            var foods = _context.Foods.Where(x => x.Name.Equals(food.Name)).FirstOrDefault();
 
             if (food != null)
             {
@@ -77,7 +78,7 @@ namespace FinalProjectGroup2.Data
                 _context.Foods.Add(food);
                 _context.SaveChanges();
                 return 1;
-            } catch (Exception)
+            } catch (System.Exception ex )
             {
                 return 0;
             }

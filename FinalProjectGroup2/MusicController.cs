@@ -2,6 +2,7 @@
 
 
 using FinalProjectGroup2;
+using FinalProjectGroup2.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
@@ -14,9 +15,9 @@ namespace FinalProjectGroup2.Controllers
     [Route("api/[controller]")]
     public class MusicController : ControllerBase
     {
-        private readonly DataContext _context;
+        private readonly  MusicContext _context;
 
-        public MusicController(DataContext context)
+        public MusicController(MusicContext context)
         {
             _context = context;
         }
@@ -26,18 +27,18 @@ namespace FinalProjectGroup2.Controllers
         {
             if (id == null || id == 0)
             {
-                return await _context.MusicFavs.Take(5).ToListAsync();
+                return await _context.Musicc.Take(5).ToListAsync();
             }
             else
             {
-                return await _context.MusicFavs.Where(tm => tm.Id == id).ToListAsync();
+                return await _context.Musicc.Where(tm => tm.Id == id).ToListAsync();
             }
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<Music>> GetMusicFav(int id)
         {
-            var musicFav = await _context.MusicFavs.FindAsync(id);
+            var musicFav = await _context.Musicc.FindAsync(id);
 
             if (musicFav == null)
             {
@@ -50,7 +51,7 @@ namespace FinalProjectGroup2.Controllers
         [HttpPost]
         public async Task<ActionResult<Music>> PostMusic(Music musicFav)
         {
-            _context.MusicFavs.Add(musicFav);
+            _context.Musicc.Add(musicFav);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction(nameof(GetMusicFavs), new { id = musicFav.Id }, musicFav);
@@ -73,14 +74,14 @@ namespace FinalProjectGroup2.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteMusic(int id)
         {
-            var musicFav = await _context.MusicFavs.FindAsync(id);
+            var musicFav = await _context.Musicc.FindAsync(id);
 
             if (musicFav == null)
             {
                 return NotFound();
             }
 
-            _context.MusicFavs.Remove(musicFav);
+            _context.Musicc.Remove(musicFav);
             await _context.SaveChangesAsync();
 
             return NoContent();

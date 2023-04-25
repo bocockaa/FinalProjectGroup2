@@ -1,27 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\justi\\Documents\\GitHub\\FinalProjectGroup2\\FinalProjectGroup2\\FinalProjectGroup2.csproj": {}
+    "C:\\Users\\Zainab\\source\\repos\\bocockaa\\FinalProjectGroup2\\FinalProjectGroup2\\FinalProjectGroup2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\justi\\Documents\\GitHub\\FinalProjectGroup2\\FinalProjectGroup2\\FinalProjectGroup2.csproj": {
+    "C:\\Users\\Zainab\\source\\repos\\bocockaa\\FinalProjectGroup2\\FinalProjectGroup2\\FinalProjectGroup2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\justi\\Documents\\GitHub\\FinalProjectGroup2\\FinalProjectGroup2\\FinalProjectGroup2.csproj",
+        "projectUniqueName": "C:\\Users\\Zainab\\source\\repos\\bocockaa\\FinalProjectGroup2\\FinalProjectGroup2\\FinalProjectGroup2.csproj",
         "projectName": "FinalProjectGroup2",
-        "projectPath": "C:\\Users\\justi\\Documents\\GitHub\\FinalProjectGroup2\\FinalProjectGroup2\\FinalProjectGroup2.csproj",
-        "packagesPath": "C:\\Users\\justi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\justi\\Documents\\GitHub\\FinalProjectGroup2\\FinalProjectGroup2\\obj\\",
+        "projectPath": "C:\\Users\\Zainab\\source\\repos\\bocockaa\\FinalProjectGroup2\\FinalProjectGroup2\\FinalProjectGroup2.csproj",
+        "packagesPath": "C:\\Users\\Zainab\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Zainab\\source\\repos\\bocockaa\\FinalProjectGroup2\\FinalProjectGroup2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\justi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Zainab\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -41,6 +40,22 @@
           "targetAlias": "net7.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.5, )"
             },

@@ -1,9 +1,11 @@
-﻿namespace FinalProjectGroup2.Data
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace FinalProjectGroup2.Data
 {
-    public class FoodContext : DbContext
+    public class MusicContext : DbContext
     {
 
-        public FoodContext(DbContextOptions<FMusicContext> options) : base(options) { }
+        public MusicContext(DbContextOptions<MusicContext> options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace FinalProjectGroup2.Controllers
@@ -24,34 +25,34 @@ namespace FinalProjectGroup2.Controllers
         {
             if (id == null || id == 0)
             {
-                return await _context.Memberinfos.Take(5).ToListAsync();
+                return await _context.Memberr.Take(5).ToListAsync();
             }
             else
             {
-                return await _context.Memberinfos.Where(TaskCompletionSource => TaskCompletionSource.Id == id).ToListAsync();
+                return await _context.Memberr.Where(TaskCompletionSource => TaskCompletionSource.Id == id).ToListAsync();
             }
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<Member>> GetMemberinfo(int id)
         {
-            var memberInfos = await _context.Memberinfos.FindAsync(id);
+            var memberInfos = await _context.Memberr.FindAsync(id);
             
             if (memberInfos == null)
             {
                 return NotFound();
             }
             
-            return memberInfo;
+            return memberInfos;
         }
 
         [HttpPost]
         public async Task<ActionResult<Member>> PostMemberinfo(Member memberInfos)
         {
-            _context.MemberInfos.Add(memberInfo);
+            _context.Memberr.Add(memberInfos);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetMemberInfos), new {id = memberInfos.Id}, memberInfo);
+            return CreatedAtAction(nameof(GetMemberinfo), new {id = memberInfos.Id}, memberInfos);
         }
 
         [HttpPut("{id}")]
@@ -59,7 +60,7 @@ namespace FinalProjectGroup2.Controllers
         {
             if (id != memberInfo.Id)
             {
-                return Badrequest();
+                return BadRequest();
             }
 
             _context.Entry(memberInfo).State = EntityState.Modified;
@@ -71,14 +72,14 @@ namespace FinalProjectGroup2.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteMemberinfo(int id)
         {
-            var memberInfo = await _context.MemberInfos.FindAsync(id);
+            var memberInfo = await _context.Memberr.FindAsync(id);
 
             if (memberInfo == null)
             {
                 return NotFound();
             }
 
-            _context.MemberInfos.Remove(memberInfo);
+            _context.Memberr.Remove(memberInfo);
             await _context.SaveChangesAsync();
 
             return NoContent();

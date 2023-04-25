@@ -12,7 +12,7 @@ namespace FinalProjectGroup2
         public string FullName {get; set;}
 
         //birthdays
-        public DateTime Birthday {get; set;}
+        public string Birthday {get; set;}
 
         //college program
         public string Program {get; set;}
