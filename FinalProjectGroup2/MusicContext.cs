@@ -5,6 +5,7 @@ namespace FinalProjectGroup2.Data
     public class MusicContext : DbContext
     {
 
+        //..
         public MusicContext(DbContextOptions<MusicContext> options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder builder)

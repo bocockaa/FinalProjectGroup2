@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace FinalProjectGroup2.Models
 {
+    //model
     [Table("Hobbies")]
     public class Hobby
     {

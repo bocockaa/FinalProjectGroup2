@@ -3,7 +3,7 @@ using System;
 namespace FinalProjectGroup2
 {
 
-
+    //..
     public class Member
     {
         //primary key

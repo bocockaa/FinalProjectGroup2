@@ -10,6 +10,7 @@ using FinalProjectGroup2.Context;
 
 namespace FinalProjectGroup2.Controllers
 {
+    //add hobby controller
     [Route("api/[controller]")]
     [ApiController]
     public class HobbyController : ControllerBase

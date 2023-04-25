@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
+//...
 namespace FinalProjectGroup2.Data
 {
     public class MemberinfoContext : DbContext{
