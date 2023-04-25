@@ -1,4 +1,4 @@
-using Microsoft.EntityFrameCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace FinalProjectGroup2.Data
 {
